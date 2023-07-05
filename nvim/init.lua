@@ -1,0 +1,7 @@
+require "config.options"
+require "config.keymaps"
+require "config.plugins"
+require "config.colorscheme"
+require "config.plugins_conf"
+require "config.colorschemes_conf"
+require "config.lsp"

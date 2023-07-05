@@ -1,0 +1,70 @@
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
+
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+window:
+  dimensions:
+    columns: 263
+    lines: 80
+
+font:
+  # Normal (roman) font face
+  normal:
+    # family: Iosevka Extralight
+    # family: Fira Code
+    # family: Iosevka Nerd Font
+    # family: Noto Sans Mono Light
+    # family: FuraCode Nerd Font
+    # family: FuraCode Nerd Font
+    family: FiraCode Nerd Font
+    # family: CascadiaCode Nerd Font
+    # family: FantasqueSansMono Nerd Font Mono
+    # family: VictorMono Nerd Font
+    # family: Anonymice Nerd Font
+    # family: Iosevka Nerd Font
+    # family: SauceCodePro Nerd Font
+    # The `style` can be specified to pick a specific face.
+    # style: Light
+    style: Regular
+
+  size: 16
+
+key_bindings:
+  - { key: N, mods: Command, action: CreateNewWindow }
+
+colors:
+  # Default colors
+  primary:
+    background: '#26282a'
+    foreground: '#f0f0f0'
+  cursor:
+    background: '#f0f0f0'
+    foreground: '#26282a'
+
+  # Normal colors
+  normal:
+    black: '#26282a'
+    red: '#ff8878'
+    green: '#b4fb73'
+    yellow: '#fffcb7'
+    blue: '#8bbce5'
+    magenta: '#ffb2fe'
+    cyan: '#a2e1f8'
+    white: '#f1f1f1'
+
+  # Bright colors
+  bright:
+    black: '#6f6f6f'
+    red: '#fe978b'
+    green: '#d6fcba'
+    yellow: '#fffed5'
+    blue: '#c2e3ff'
+    magenta: '#ffc6ff'
+    cyan: '#c0e9f8'
+    white: '#ffffff'
+theme: Taerminal

@@ -1,0 +1,71 @@
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
+
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+window:
+  opacity: 1
+  dimensions:
+    columns: 200
+    lines: 80
+
+env:
+  TERM: xterm-256color
+
+font:
+  # Normal (roman) font face
+  normal:
+    # family: Iosevka Extralight
+    # family: Fira Code
+    # family: Iosevka Nerd Font
+    # family: Noto Sans Mono Light
+    # family: FuraCode Nerd Font
+    # family: FuraCode Nerd Font
+    family: FiraCode Nerd Font
+    # family: CascadiaCode Nerd Font
+    # family: FantasqueSansMono Nerd Font Mono
+    # family: VictorMono Nerd Font
+    # family: Anonymice Nerd Font
+    # family: Iosevka Nerd Font
+    # family: SauceCodePro Nerd Font
+    # The `style` can be specified to pick a specific face.
+    # style: Light
+    style: Regular
+
+  size: 14
+
+key_bindings:
+  - { key: N, mods: Command, action: CreateNewWindow }
+
+colors:
+  name: Atelierdune (dark)
+  author: Chris Kempson
+  primary:
+    background: "#20201d"
+    foreground: "#a6a28c"
+  cursor:
+    text: "#20201d"
+    cursor: "#a6a28c"
+  normal:
+    black: "#20201d"
+    red: "#d73737"
+    green: "#60ac39"
+    yellow: "#cfb017"
+    blue: "#6684e1"
+    magenta: "#b854d4"
+    cyan: "#1fad83"
+    white: "#a6a28c"
+  bright:
+    black: "#7d7a68"
+    red: "#d73737"
+    green: "#60ac39"
+    yellow: "#cfb017"
+    blue: "#6684e1"
+    magenta: "#b854d4"
+    cyan: "#1fad83"
+    white: "#fefbec"
+theme: Atelierdune.dark

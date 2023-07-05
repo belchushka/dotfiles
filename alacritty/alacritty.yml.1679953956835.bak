@@ -1,0 +1,67 @@
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
+
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+window:
+  dimensions:
+    columns: 263
+    lines: 80
+
+font:
+  # Normal (roman) font face
+  normal:
+    # family: Iosevka Extralight
+    # family: Fira Code
+    # family: Iosevka Nerd Font
+    # family: Noto Sans Mono Light
+    # family: FuraCode Nerd Font
+    # family: FuraCode Nerd Font
+    family: FiraCode Nerd Font
+    # family: CascadiaCode Nerd Font
+    # family: FantasqueSansMono Nerd Font Mono
+    # family: VictorMono Nerd Font
+    # family: Anonymice Nerd Font
+    # family: Iosevka Nerd Font
+    # family: SauceCodePro Nerd Font
+    # The `style` can be specified to pick a specific face.
+    # style: Light
+    style: Regular
+
+  size: 16
+
+key_bindings:
+  - { key: N, mods: Command, action: CreateNewWindow }
+
+colors:
+  name: Invisibone
+  author: Baskerville
+  primary:
+    background: "#232323"
+    foreground: "#A0A0A0"
+  cursor:
+    text: "#232323"
+    cursor: "#A0A0A0"
+  normal:
+    black: "#303030"
+    red: "#D370A3"
+    green: "#6D9E3F"
+    yellow: "#B58858"
+    blue: "#6095C5"
+    magenta: "#AC7BDE"
+    cyan: "#3BA275"
+    white: "#CFCFCF"
+  bright:
+    black: "#686868"
+    red: "#FFA7DA"
+    green: "#A3D572"
+    yellow: "#EFBD8B"
+    blue: "#98CBFE"
+    magenta: "#E5B0FF"
+    cyan: "#75DAA9"
+    white: "#FFFFFF"
+theme: Invisibone

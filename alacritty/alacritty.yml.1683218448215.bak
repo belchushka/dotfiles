@@ -1,0 +1,68 @@
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
+
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+window:
+  opacity: 0.98
+  dimensions:
+    columns: 200
+    lines: 80
+
+font:
+  # Normal (roman) font face
+  normal:
+    # family: Iosevka Extralight
+    # family: Fira Code
+    # family: Iosevka Nerd Font
+    # family: Noto Sans Mono Light
+    # family: FuraCode Nerd Font
+    # family: FuraCode Nerd Font
+    family: FiraCode Nerd Font
+    # family: CascadiaCode Nerd Font
+    # family: FantasqueSansMono Nerd Font Mono
+    # family: VictorMono Nerd Font
+    # family: Anonymice Nerd Font
+    # family: Iosevka Nerd Font
+    # family: SauceCodePro Nerd Font
+    # The `style` can be specified to pick a specific face.
+    # style: Light
+    style: Regular
+
+  size: 14
+
+key_bindings:
+  - { key: N, mods: Command, action: CreateNewWindow }
+
+colors:
+  name: Rasi
+  author: ""
+  primary:
+    background: "#000000"
+    foreground: "#ffffff"
+  cursor:
+    text: "#000000"
+    cursor: "#ffffff"
+  normal:
+    black: "#1b1d1e"
+    red: "#f92672"
+    green: "#82b414"
+    yellow: "#fd971f"
+    blue: "#4e82aa"
+    magenta: "#8c54fe"
+    cyan: "#465457"
+    white: "#ccccc6"
+  bright:
+    black: "#505354"
+    red: "#ff5995"
+    green: "#b6e354"
+    yellow: "#feed6c"
+    blue: "#0c73c2"
+    magenta: "#9e6ffe"
+    cyan: "#899ca1"
+    white: "#f8f8f2"
+theme: Rasi

@@ -1,0 +1,71 @@
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
+
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+window:
+  opacity: 1
+  dimensions:
+    columns: 200
+    lines: 80
+
+env:
+  TERM: xterm-256color
+
+font:
+  # Normal (roman) font face
+  normal:
+    # family: Iosevka Extralight
+    # family: Fira Code
+    # family: Iosevka Nerd Font
+    # family: Noto Sans Mono Light
+    # family: FuraCode Nerd Font
+    # family: FuraCode Nerd Font
+    family: FiraCode Nerd Font
+    # family: CascadiaCode Nerd Font
+    # family: FantasqueSansMono Nerd Font Mono
+    # family: VictorMono Nerd Font
+    # family: Anonymice Nerd Font
+    # family: Iosevka Nerd Font
+    # family: SauceCodePro Nerd Font
+    # The `style` can be specified to pick a specific face.
+    # style: Light
+    style: Regular
+
+  size: 14
+
+key_bindings:
+  - { key: N, mods: Command, action: CreateNewWindow }
+
+colors:
+  name: Bespin (light)
+  author: Chris Kempson
+  primary:
+    background: "#baae9e"
+    foreground: "#5e5d5c"
+  cursor:
+    text: "#baae9e"
+    cursor: "#5e5d5c"
+  normal:
+    black: "#28211c"
+    red: "#cf6a4c"
+    green: "#54be0d"
+    yellow: "#f9ee98"
+    blue: "#5ea6ea"
+    magenta: "#9b859d"
+    cyan: "#afc4db"
+    white: "#8a8986"
+  bright:
+    black: "#666666"
+    red: "#cf6a4c"
+    green: "#54be0d"
+    yellow: "#f9ee98"
+    blue: "#5ea6ea"
+    magenta: "#9b859d"
+    cyan: "#afc4db"
+    white: "#baae9e"
+theme: Bespin.light

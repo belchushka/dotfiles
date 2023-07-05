@@ -1,0 +1,67 @@
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
+
+# Project:    Nord Alacritty
+# Version:    0.1.0
+# Repository: https://github.com/arcticicestudio/nord-alacritty
+# License:    MIT
+# References:
+#   https://github.com/alacritty/alacritty
+window:
+  dimensions:
+    columns: 263
+    lines: 80
+
+font:
+  # Normal (roman) font face
+  normal:
+    # family: Iosevka Extralight
+    # family: Fira Code
+    # family: Iosevka Nerd Font
+    # family: Noto Sans Mono Light
+    # family: FuraCode Nerd Font
+    # family: FuraCode Nerd Font
+    family: FiraCode Nerd Font
+    # family: CascadiaCode Nerd Font
+    # family: FantasqueSansMono Nerd Font Mono
+    # family: VictorMono Nerd Font
+    # family: Anonymice Nerd Font
+    # family: Iosevka Nerd Font
+    # family: SauceCodePro Nerd Font
+    # The `style` can be specified to pick a specific face.
+    # style: Light
+    style: Regular
+
+  size: 16
+
+key_bindings:
+  - { key: N, mods: Command, action: CreateNewWindow }
+
+colors:
+  name: Chalk (dark)
+  author: Chris Kempson
+  primary:
+    background: "#151515"
+    foreground: "#d0d0d0"
+  cursor:
+    text: "#151515"
+    cursor: "#d0d0d0"
+  normal:
+    black: "#151515"
+    red: "#fb9fb1"
+    green: "#acc267"
+    yellow: "#ddb26f"
+    blue: "#6fc2ef"
+    magenta: "#e1a3ee"
+    cyan: "#12cfc0"
+    white: "#d0d0d0"
+  bright:
+    black: "#505050"
+    red: "#fb9fb1"
+    green: "#acc267"
+    yellow: "#ddb26f"
+    blue: "#6fc2ef"
+    magenta: "#e1a3ee"
+    cyan: "#12cfc0"
+    white: "#f5f5f5"
+theme: Chalk.dark
