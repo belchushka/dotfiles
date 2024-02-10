@@ -1,13 +1,15 @@
-local is_ok, lualine = pcall(require, 'lualine')
+require('utils.notify_module_load_fail')
+
+local is_ok, module = pcall(require, 'lualine')
 
 if not is_ok then
-  vim.notify('lua line require fail')
+  notify_module_load_fail("lualine")
   return
 end
 
-
-lualine.setup {
+module.setup {
   options = {
+    theme = 'auto',
     icons_enabled = true,
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
@@ -27,7 +29,7 @@ lualine.setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
+    lualine_c = {{'filename', path = 1}},
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}

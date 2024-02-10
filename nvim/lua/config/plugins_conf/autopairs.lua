@@ -1,9 +1,13 @@
-local status_ok, npairs = pcall(require, "nvim-autopairs")
-if not status_ok then
+require('utils.notify_module_load_fail')
+
+local is_ok, module = pcall(require, 'nvim-autopairs')
+
+if not is_ok then
+  notify_module_load_fail("nvim-autopairs")
   return
 end
 
-npairs.setup {
+module.setup {
   check_ts = true,
   ts_config = {
     lua = { "string", "source" },

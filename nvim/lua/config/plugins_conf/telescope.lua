@@ -1,34 +1,27 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
+require('utils.notify_module_load_fail')
+
+local is_ok, module = pcall(require, 'telescope')
+
+if not is_ok then
+  notify_module_load_fail("telescope")
   return
 end
 
 local actions = require "telescope.actions"
 
-telescope.load_extension('media_files')
-telescope.load_extension("file_browser")
+module.load_extension('media_files')
+module.load_extension("file_browser")
 
-telescope.setup {
+module.setup {
+  pickers = {
+    find_files = {
+      theme = "dropdown",
+    }
+  },
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-    extensions = {
-      file_browser = {
-        theme = "ivy",
-        -- disables netrw and use telescope-file-browser in its place
-        hijack_netrw = true,
-        mappings = {
-          ["i"] = {
-            -- your custom insert mode mappings
-          },
-          ["n"] = {
-            -- your custom normal mode mappings
-          },
-        },
-      },
-    },
 
     mappings = {
       i = {

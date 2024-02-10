@@ -1,39 +1,51 @@
-vim.opt.number = true
-vim.opt.backup = false
-vim.opt.clipboard = "unnamedplus"
-vim.opt.cmdheight = 2
-vim.opt.completeopt = { "menuone", "noselect"}
-vim.opt.conceallevel = 0
-vim.opt.fileencoding = "utf-8"
-vim.opt.hlsearch = true
-vim.opt.ignorecase = true
-vim.opt.mouse = "a"
-vim.opt.pumheight = 10
-vim.opt.showmode = false
-vim.opt.showtabline = 2
-vim.opt.smartcase = true
-vim.opt.smartindent = true
-vim.opt.termguicolors = true
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.swapfile = false 
-vim.opt.timeoutlen = 1000
-vim.opt.undofile = true
-vim.opt.updatetime = 300
-vim.opt.writebackup = false
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.cursorline = true
-vim.opt.number = true
-vim.opt.relativenumber = false
-vim.opt.numberwidth = 4
-vim.opt.signcolumn = "yes"
-vim.opt.wrap = false
-vim.opt.scrolloff = 8
-vim.opt.sidescrolloff = 8
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
+local opts = {
+  number = true,
+  backup = false,
+  clipboard = 'unnamedplus',
+  cmdheight = 2,
+  completeopt = { "menuone", "noselect" },
+  conceallevel = 0,
+  fileencoding = "utf-8",
+  hlsearch = true,
+  ignorecase = true,
+  mouse = 'a',
+  pumheight = 10,
+  showmode = false,
+  showtabline = 2,
+  smartcase = true,
+  smartindent = true,
+  termguicolors = true,
+  splitbelow = true,
+  splitright = true,
+  swapfile = false,
+  timeoutlen = 1000,
+  undofile = true,
+  updatetime = 300,
+  writebackup = false,
+  expandtab = true,
+  shiftwidth = 2,
+  tabstop = 2,
+  cursorline = true,
+  relativenumber = false,
+  numberwidth = 4,
+  signcolumn = "yes",
+  wrap = false,
+  scrolloff = 8,
+  sidescrolloff = 8,
+}
+
+local global = {
+  loaded_netrw  = 1,
+  loaded_netrwPlugin = 1
+}
+
+for key,value in pairs(opts) do
+  vim.opt[key] = value
+end
+
+for key,value in pairs(global) do
+  vim.g[key] = value
+end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]

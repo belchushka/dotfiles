@@ -85,6 +85,11 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["alpha-nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -135,6 +140,11 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
@@ -162,6 +172,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neo-tree.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
+    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["null-ls.nvim"] = {
     loaded = true,

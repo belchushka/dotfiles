@@ -1,8 +1,11 @@
-local is_ok, colorizer = pcall(require, 'colorizer');
+require('utils.notify_module_load_fail')
+
+local is_ok, module = pcall(require, 'colorizer')
+
 if not is_ok then
-  vim.notify('failed to load colorizer')
+  notify_module_load_fail("colorizer")
   return
 end
 
-colorizer.setup()
+module.setup()
 

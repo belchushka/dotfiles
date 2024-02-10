@@ -1,10 +1,16 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
+require('utils.notify_module_load_fail')
+
+local is_ok_cmp, cmp = pcall(require, 'cmp')
+
+if not is_ok_cmp then
+  notify_module_load_fail("cmp")
   return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
+local is_ok_luasnip, luasnip = pcall(require, 'luasnip')
+
+if not is_ok_luasnip then
+  notify_module_load_fail("luasnip")
   return
 end
 

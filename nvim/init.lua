@@ -4,4 +4,3 @@ require "config.lsp"
 require "config.plugins_conf"
 require "config.keymaps"
 require "config.colorscheme"
-

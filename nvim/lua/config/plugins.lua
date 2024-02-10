@@ -4,8 +4,7 @@ local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-
-PACKER_BOOTSTRAP = fn.system {
+  PACKER_BOOTSTRAP = fn.system {
     "git",
     "clone",
     "--depth",
@@ -44,18 +43,33 @@ packer.init {
 return packer.startup(function(use)
   -- Startup
   use {
-  "startup-nvim/startup.nvim",
-  requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    "startup-nvim/startup.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
   }
 
-  -- Nvimtree
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', 'nvim-lua/plenary.nvim' },
+  }
 
+  -- Tree
+  use {
+  "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    requires = { 
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  }
   use "nvim-tree/nvim-tree.lua"
 
   -- Themes
   use { "catppuccin/nvim", as = "catppuccin" }
   use 'nvim-tree/nvim-web-devicons'
   use "tiagovla/tokyodark.nvim"
+  use { "ellisonleao/gruvbox.nvim" }
   use 'rmehri01/onenord.nvim'
   use "rebelot/kanagawa.nvim"
   use { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 }
@@ -63,27 +77,27 @@ return packer.startup(function(use)
   -- Plugins
   use 'mattn/emmet-vim'
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' }
   use {
-  'gelguy/wilder.nvim',
-  config = function()
-  local wilder = require('wilder')
-    wilder.setup({
-      modes = {':', '/', '?'},
-      next_key = '<Tab>',
-      previous_key = '<S-Tab>'
-    })
-    wilder.set_option('renderer', wilder.renderer_mux({
-       [':'] = wilder.popupmenu_renderer({
+    'gelguy/wilder.nvim',
+    config = function()
+      local wilder = require('wilder')
+      wilder.setup({
+        modes = { ':', '/', '?' },
+        next_key = '<Tab>',
+        previous_key = '<S-Tab>'
+      })
+      wilder.set_option('renderer', wilder.renderer_mux({
+        [':'] = wilder.popupmenu_renderer({
           highlighter = wilder.basic_highlighter(),
         }),
         ['/'] = wilder.wildmenu_renderer({
           highlighter = wilder.basic_highlighter(),
         }),
-    }))
-    end 
+      }))
+    end
   }
 
   -- Cmp
@@ -96,7 +110,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
 
   -- Snippets
-  use "L3MON4D3/LuaSnip" 
+  use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
   use "mlaursen/vim-react-snippets"
   use "moll/vim-bbye"
@@ -104,20 +118,20 @@ return packer.startup(function(use)
   -- Lsp
   use 'neovim/nvim-lspconfig'
   use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim" 
+  use "williamboman/mason-lspconfig.nvim"
   use 'jose-elias-alvarez/null-ls.nvim'
 
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   use 'nvim-telescope/telescope-media-files.nvim'
   use 'norcalli/nvim-colorizer.lua'
   use {
     "nvim-telescope/telescope-file-browser.nvim",
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-}
+  }
 
   -- Treesitter
   use {
@@ -125,22 +139,22 @@ return packer.startup(function(use)
     run = ":TSUpdate"
   }
 
-  -- Autopairs 
+  -- Autopairs
   use {
-	  "windwp/nvim-autopairs"
+    "windwp/nvim-autopairs"
   }
 
   -- Comments
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use {
-      'numToStr/Comment.nvim',
-      config = function()
-          require('Comment').setup()
-      end
-    }
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
 
   -- ToggleTerm
-  use {"akinsho/toggleterm.nvim", tag = '*' }
+  use { "akinsho/toggleterm.nvim", tag = '*' }
 
   -- Status line
   use {
@@ -148,9 +162,9 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  use { 
-    'prettier/vim-prettier', 
-    run = 'yarn install --frozen-lockfile --production', 
+  use {
+    'prettier/vim-prettier',
+    run = 'yarn install --frozen-lockfile --production',
   }
 
   use 'mfussenegger/nvim-dap'
@@ -162,5 +176,3 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
-
-

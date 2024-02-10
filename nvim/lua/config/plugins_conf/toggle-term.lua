@@ -1,9 +1,13 @@
-local status_ok, toggleterm = pcall(require, "toggleterm")
-if not status_ok then
-	return
+require('utils.notify_module_load_fail')
+
+local is_ok, module = pcall(require, 'toggleterm')
+
+if not is_ok then
+  notify_module_load_fail("toggleterm")
+  return
 end
 
-toggleterm.setup({
+module.setup({
 	size = 30,
 	open_mapping = [[<C-\>]],
 	hide_numbers = true,

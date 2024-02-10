@@ -1,9 +1,13 @@
-local status_ok, bufferline = pcall(require, "bufferline")
-if not status_ok then
+require('utils.notify_module_load_fail')
+
+local is_ok, module = pcall(require, 'bufferline')
+
+if not is_ok then
+  notify_module_load_fail("bufferline")
   return
 end
 
-bufferline.setup {
+module.setup {
   options = {
     numbers = "none",
     close_command = "Bdelete! %d",
@@ -22,8 +26,7 @@ bufferline.setup {
     tab_size = 21,
     diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = true,
-    offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "center", padding = 0 } },
-    show_buffer_icons = true,
+    show_buffer_icons = false,
     show_buffer_close_icons = false,
     show_close_icon = true,
     show_tab_indicators = true,
