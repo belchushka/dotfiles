@@ -13,7 +13,8 @@ local servers = {
   "clangd",
   "eslint",
   "rust_analyzer",
-  "sqlls"
+  "sqlls",
+  "prismals"
 }
 
 local settings = {

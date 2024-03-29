@@ -1,13 +1,9 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-end
-
 function fish_greeting
-	pfetch
+	neofetch
 end
 
 function nvm
-           bass source /opt/homebrew/opt/nvm/nvm.sh --no-use ';' nvm $argv
+  bass source /opt/homebrew/opt/nvm/nvm.sh --no-use ';' nvm $argv
 end
 
 
@@ -29,6 +25,7 @@ if status is-login
   set -x PATH /opt/nvim/bin $PATH
   set -x PATH $GEM_HOME/bin $PATH
   set -x PATH /Library/Frameworks/Python.framework/Versions/3.11/bin $PATH
+  set -x ALACRITTY_THEME rose-pine
 
   nvm use 18
 end

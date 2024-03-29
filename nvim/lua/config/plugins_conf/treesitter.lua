@@ -23,7 +23,9 @@ module.setup {
     "go",
     "javascript",
     "sql",
-    "yaml"
+    "yaml",
+    "prisma",
+    "jsdoc",
   },
   auto_install = true,
   autotag = {

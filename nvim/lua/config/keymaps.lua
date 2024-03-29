@@ -79,3 +79,6 @@ keymap("n", "<leader>Y", '"+Y', opts)
 -- Format
 keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<cr>", opts)
 
+-- Code Actions
+keymap("n", "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<cr>", opts)
+

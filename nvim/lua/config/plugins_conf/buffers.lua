@@ -35,10 +35,5 @@ module.setup {
     enforce_regular_tabs = true,
     always_show_bufferline = true,
   },
-  highlights = {
-    indicator_selected = {
-      fg = { attribute = "fg", highlight = "LspDiagnosticsDefaultHint" },
-      bg = { attribute = "bg", highlight = "Normal" },
-    },
-  },
+  highlights = {},
 }

@@ -51,12 +51,11 @@ return packer.startup(function(use)
     'goolord/alpha-nvim',
     requires = { 'nvim-tree/nvim-web-devicons', 'nvim-lua/plenary.nvim' },
   }
-
   -- Tree
   use {
-  "nvim-neo-tree/neo-tree.nvim",
+    "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
-    requires = { 
+    requires = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
@@ -73,8 +72,13 @@ return packer.startup(function(use)
   use 'rmehri01/onenord.nvim'
   use "rebelot/kanagawa.nvim"
   use { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 }
+  use { "rose-pine/neovim", name = "rose-pine" }
+  use { 'Yazeed1s/oh-lucy.nvim' }
 
   -- Plugins
+  use {
+    "aznhe21/actions-preview.nvim",
+  }
   use 'mattn/emmet-vim'
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
@@ -138,6 +142,9 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate"
   }
+  use {
+    "nvim-treesitter/nvim-treesitter-context",
+  }
 
   -- Autopairs
   use {
@@ -170,6 +177,12 @@ return packer.startup(function(use)
   use 'mfussenegger/nvim-dap'
   use "akinsho/bufferline.nvim"
 
+  use({
+    'mvllow/modes.nvim',
+    tag = 'v0.2.0',
+  })
+
+  use({ "folke/twilight.nvim" })
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
