@@ -97,4 +97,6 @@ function M.get_color(opts)
   return "NONE" -- we couldn't resolve the color
 end
 
-return M
+vim.colors = M
+
+

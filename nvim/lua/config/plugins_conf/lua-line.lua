@@ -1,9 +1,7 @@
-require('utils.notify_module_load_fail')
-
 local is_ok, module = pcall(require, 'lualine')
 
 if not is_ok then
-  notify_module_load_fail("lualine")
+  vim.utils.notify_module_load_fail("lualine")
   return
 end
 

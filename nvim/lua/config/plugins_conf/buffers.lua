@@ -1,9 +1,7 @@
-require('utils.notify_module_load_fail')
-
 local is_ok, module = pcall(require, 'bufferline')
 
 if not is_ok then
-  notify_module_load_fail("bufferline")
+  vim.utils.notify_module_load_fail("bufferline")
   return
 end
 
@@ -25,7 +23,7 @@ module.setup {
     max_prefix_length = 30,
     tab_size = 21,
     diagnostics = "nvim_lsp",
-    diagnostics_update_in_insert = true,
+    update_in_insert = true,
     show_buffer_icons = false,
     show_buffer_close_icons = false,
     show_close_icon = true,

@@ -80,6 +80,7 @@ return packer.startup(function(use)
     "mcchrish/zenbones.nvim",
     requires = "rktjmp/lush.nvim"
   }
+  use { "scottmckendry/cyberdream.nvim" }
   use "xiyaowong/transparent.nvim"
   use "rebelot/kanagawa.nvim"
   use { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 }

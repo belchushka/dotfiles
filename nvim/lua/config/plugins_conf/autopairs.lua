@@ -1,9 +1,7 @@
-require('utils.notify_module_load_fail')
-
 local is_ok, module = pcall(require, 'nvim-autopairs')
 
 if not is_ok then
-  notify_module_load_fail("nvim-autopairs")
+  vim.utils.vim.utils.notify_module_load_fail("nvim-autopairs")
   return
 end
 

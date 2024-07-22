@@ -1,16 +1,14 @@
-require('utils.notify_module_load_fail')
-
 local is_ok_cmp, cmp = pcall(require, 'cmp')
 
 if not is_ok_cmp then
-  notify_module_load_fail("cmp")
+  vim.utils.notify_module_load_fail("cmp")
   return
 end
 
 local is_ok_luasnip, luasnip = pcall(require, 'luasnip')
 
 if not is_ok_luasnip then
-  notify_module_load_fail("luasnip")
+  vim.utils.notify_module_load_fail("luasnip")
   return
 end
 
