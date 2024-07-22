@@ -25,7 +25,8 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
+-- keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -65,7 +66,6 @@ keymap("n", "<C-b>", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 -- Telescope
 keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-keymap("n", "<leader>pp", "<cmd>Telescope projects<cr>", opts)
 
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -82,3 +82,6 @@ keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<cr>
 -- Code Actions
 keymap("n", "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<cr>", opts)
 
+-- Url open
+keymap("n", "gx", "<cmd>Browse<cr>", opts)
+keymap("v", "gx", "<cmd>Browse<cr>", opts)

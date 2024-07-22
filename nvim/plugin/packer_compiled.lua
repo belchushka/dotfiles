@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/belchushka/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?.lua;/Users/belchushka/.cache/nvim/packer_hererocks/2.1.1700008891/share/lua/5.1/?/init.lua;/Users/belchushka/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?.lua;/Users/belchushka/.cache/nvim/packer_hererocks/2.1.1700008891/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/belchushka/.cache/nvim/packer_hererocks/2.1.1700008891/lib/lua/5.1/?.so"
+local package_path_str = "/Users/belchushka/.cache/nvim/packer_hererocks/2.1.1710088188/share/lua/5.1/?.lua;/Users/belchushka/.cache/nvim/packer_hererocks/2.1.1710088188/share/lua/5.1/?/init.lua;/Users/belchushka/.cache/nvim/packer_hererocks/2.1.1710088188/lib/luarocks/rocks-5.1/?.lua;/Users/belchushka/.cache/nvim/packer_hererocks/2.1.1710088188/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/Users/belchushka/.cache/nvim/packer_hererocks/2.1.1710088188/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -94,6 +94,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
+  },
+  ["ayu-vim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/ayu-vim",
+    url = "https://github.com/ayu-theme/ayu-vim"
+  },
+  ["blame.nvim"] = {
+    config = { "\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nblame\frequire\0" },
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/blame.nvim",
+    url = "https://github.com/FabijanZulj/blame.nvim"
   },
   ["bufferline.nvim"] = {
     loaded = true,
@@ -145,10 +156,20 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
+  ["gx.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/gx.nvim",
+    url = "https://github.com/chrishrb/gx.nvim"
   },
   ["kanagawa.nvim"] = {
     loaded = true,
@@ -159,6 +180,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["markdown-preview.nvim"] = {
     commands = { "MarkdownPreview" },
@@ -188,10 +214,20 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
     url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
+  },
   neovim = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/neovim",
     url = "https://github.com/rose-pine/neovim"
+  },
+  ["nordic.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/nordic.nvim",
+    url = "https://github.com/AlexvZyl/nordic.nvim"
   },
   ["nui.nvim"] = {
     loaded = true,
@@ -263,6 +299,11 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/onenord.nvim",
     url = "https://github.com/rmehri01/onenord.nvim"
   },
+  ["oxocarbon.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
+    url = "https://github.com/nyoom-engineering/oxocarbon.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -308,6 +349,11 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
     url = "https://github.com/tiagovla/tokyodark.nvim"
   },
+  ["transparent.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/transparent.nvim",
+    url = "https://github.com/xiyaowong/transparent.nvim"
+  },
   ["twilight.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/twilight.nvim",
@@ -334,22 +380,31 @@ _G.packer_plugins = {
     url = "https://github.com/mlaursen/vim-react-snippets"
   },
   ["wilder.nvim"] = {
-    config = { "\27LJ\2\n∏\2\0\0\f\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\0019\1\6\0'\3\a\0009\4\b\0005\6\r\0009\a\t\0005\t\v\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\14\0069\a\15\0005\t\16\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\17\6B\4\2\0A\1\1\1K\0\1\0\6/\1\0\0\22wildmenu_renderer\6:\1\0\0\16highlighter\1\0\0\22basic_highlighter\23popupmenu_renderer\17renderer_mux\rrenderer\15set_option\nmodes\1\0\2\rnext_key\n<Tab>\17previous_key\f<S-Tab>\1\4\0\0\6:\6/\6?\nsetup\vwilder\frequire\0" },
+    config = { "\27LJ\2\nﬂ\2\0\0\f\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\0019\1\6\0'\3\a\0009\4\b\0005\6\r\0009\a\t\0005\t\v\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\14\0069\a\15\0005\t\16\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\17\6B\4\2\0A\1\1\1K\0\1\0\6/\1\0\1\16highlighter\0\22wildmenu_renderer\6:\1\0\2\6/\0\6:\0\16highlighter\1\0\1\16highlighter\0\22basic_highlighter\23popupmenu_renderer\17renderer_mux\rrenderer\15set_option\nmodes\1\0\3\nmodes\0\17previous_key\f<S-Tab>\rnext_key\n<Tab>\1\4\0\0\6:\6/\6?\nsetup\vwilder\frequire\0" },
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/wilder.nvim",
     url = "https://github.com/gelguy/wilder.nvim"
+  },
+  ["zenbones.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
+    url = "https://github.com/mcchrish/zenbones.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: wilder.nvim
-time([[Config for wilder.nvim]], true)
-try_loadstring("\27LJ\2\n∏\2\0\0\f\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\0019\1\6\0'\3\a\0009\4\b\0005\6\r\0009\a\t\0005\t\v\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\14\0069\a\15\0005\t\16\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\17\6B\4\2\0A\1\1\1K\0\1\0\6/\1\0\0\22wildmenu_renderer\6:\1\0\0\16highlighter\1\0\0\22basic_highlighter\23popupmenu_renderer\17renderer_mux\rrenderer\15set_option\nmodes\1\0\2\rnext_key\n<Tab>\17previous_key\f<S-Tab>\1\4\0\0\6:\6/\6?\nsetup\vwilder\frequire\0", "config", "wilder.nvim")
-time([[Config for wilder.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: wilder.nvim
+time([[Config for wilder.nvim]], true)
+try_loadstring("\27LJ\2\nﬂ\2\0\0\f\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\0019\1\6\0'\3\a\0009\4\b\0005\6\r\0009\a\t\0005\t\v\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\14\0069\a\15\0005\t\16\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\17\6B\4\2\0A\1\1\1K\0\1\0\6/\1\0\1\16highlighter\0\22wildmenu_renderer\6:\1\0\2\6/\0\6:\0\16highlighter\1\0\1\16highlighter\0\22basic_highlighter\23popupmenu_renderer\17renderer_mux\rrenderer\15set_option\nmodes\1\0\3\nmodes\0\17previous_key\f<S-Tab>\rnext_key\n<Tab>\1\4\0\0\6:\6/\6?\nsetup\vwilder\frequire\0", "config", "wilder.nvim")
+time([[Config for wilder.nvim]], false)
+-- Config for: blame.nvim
+time([[Config for blame.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nblame\frequire\0", "config", "blame.nvim")
+time([[Config for blame.nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)

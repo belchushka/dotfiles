@@ -16,4 +16,7 @@ module.setup({
     ignore = false,
     timeout = 500,
   },
+  update_focused_file = {
+    enable = true,
+  }
 })

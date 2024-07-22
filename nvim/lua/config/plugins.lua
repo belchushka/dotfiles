@@ -41,6 +41,10 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
+
+  --Config
+  use { "folke/neodev.nvim", opts = {} }
+
   -- Startup
   use {
     "startup-nvim/startup.nvim",
@@ -70,10 +74,27 @@ return packer.startup(function(use)
   use "tiagovla/tokyodark.nvim"
   use { "ellisonleao/gruvbox.nvim" }
   use 'rmehri01/onenord.nvim'
+  use 'AlexvZyl/nordic.nvim'
+  use 'ayu-theme/ayu-vim'
+  use {
+    "mcchrish/zenbones.nvim",
+    requires = "rktjmp/lush.nvim"
+  }
+  use "xiyaowong/transparent.nvim"
   use "rebelot/kanagawa.nvim"
   use { "bluz71/vim-nightfly-colors", name = "nightfly", lazy = false, priority = 1000 }
   use { "rose-pine/neovim", name = "rose-pine" }
   use { 'Yazeed1s/oh-lucy.nvim' }
+  use 'projekt0n/github-nvim-theme'
+  use {'nyoom-engineering/oxocarbon.nvim'}
+
+  -- Git
+  use {
+  "FabijanZulj/blame.nvim",
+  config = function()
+    require("blame").setup()
+  end
+  }
 
   -- Plugins
   use {
@@ -103,6 +124,7 @@ return packer.startup(function(use)
       }))
     end
   }
+  use 'chrishrb/gx.nvim'
 
   -- Cmp
   use "hrsh7th/nvim-cmp"
