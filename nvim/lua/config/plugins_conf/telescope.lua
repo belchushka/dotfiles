@@ -14,6 +14,9 @@ module.setup {
   pickers = {
     find_files = {
       theme = "dropdown",
+    },
+    colorscheme = {
+      enable_preview = true
     }
   },
   defaults = {

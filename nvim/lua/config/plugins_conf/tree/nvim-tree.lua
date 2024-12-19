@@ -16,5 +16,5 @@ module.setup({
   },
   update_focused_file = {
     enable = true,
-  }
+  },
 })

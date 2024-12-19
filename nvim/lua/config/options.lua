@@ -37,7 +37,7 @@ local opts = {
 
 local global = {
   loaded_netrw  = 1,
-  loaded_netrwPlugin = 1
+  loaded_netrwPlugin = 1,
 }
 
 for key,value in pairs(opts) do

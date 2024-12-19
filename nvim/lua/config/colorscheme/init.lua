@@ -1,5 +1,15 @@
 require 'config.colorscheme.cyberdream'
+require 'config.colorscheme.kanagawa'
 
-local theme = "cyberdream"
+local dark_theme = "ayu"
+local light_theme = "kanagawa-lotus"
 
-vim.cmd("colorscheme "..theme)
+local theme = vim.utils.get_sys_theme()
+
+local current_scheme = dark_theme
+
+if theme == "light" then
+  current_scheme = light_theme
+end
+
+vim.cmd("colorscheme "..current_scheme)

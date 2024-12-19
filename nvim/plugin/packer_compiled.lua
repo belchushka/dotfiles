@@ -146,6 +146,11 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["cyberdream.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/cyberdream.nvim",
@@ -190,14 +195,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
-  },
-  ["markdown-preview.nvim"] = {
-    commands = { "MarkdownPreview" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
-    url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -319,6 +316,11 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["poet-v"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/poet-v",
+    url = "https://github.com/petobens/poet-v"
+  },
   ["popup.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/popup.nvim",
@@ -364,6 +366,11 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/twilight.nvim",
     url = "https://github.com/folke/twilight.nvim"
   },
+  ["typescript-tools.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/typescript-tools.nvim",
+    url = "https://github.com/pmizio/typescript-tools.nvim"
+  },
   ["vim-bbye"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/vim-bbye",
@@ -385,7 +392,7 @@ _G.packer_plugins = {
     url = "https://github.com/mlaursen/vim-react-snippets"
   },
   ["wilder.nvim"] = {
-    config = { "\27LJ\2\nﬂ\2\0\0\f\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\0019\1\6\0'\3\a\0009\4\b\0005\6\r\0009\a\t\0005\t\v\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\14\0069\a\15\0005\t\16\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\17\6B\4\2\0A\1\1\1K\0\1\0\6/\1\0\1\16highlighter\0\22wildmenu_renderer\6:\1\0\2\6:\0\6/\0\16highlighter\1\0\1\16highlighter\0\22basic_highlighter\23popupmenu_renderer\17renderer_mux\rrenderer\15set_option\nmodes\1\0\3\nmodes\0\17previous_key\f<S-Tab>\rnext_key\n<Tab>\1\4\0\0\6:\6/\6?\nsetup\vwilder\frequire\0" },
+    config = { "\27LJ\2\nﬂ\2\0\0\f\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\0019\1\6\0'\3\a\0009\4\b\0005\6\r\0009\a\t\0005\t\v\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\14\0069\a\15\0005\t\16\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\17\6B\4\2\0A\1\1\1K\0\1\0\6/\1\0\1\16highlighter\0\22wildmenu_renderer\6:\1\0\2\6:\0\6/\0\16highlighter\1\0\1\16highlighter\0\22basic_highlighter\23popupmenu_renderer\17renderer_mux\rrenderer\15set_option\nmodes\1\0\3\rnext_key\n<Tab>\nmodes\0\17previous_key\f<S-Tab>\1\4\0\0\6:\6/\6?\nsetup\vwilder\frequire\0" },
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/wilder.nvim",
     url = "https://github.com/gelguy/wilder.nvim"
@@ -404,24 +411,12 @@ try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K
 time([[Config for blame.nvim]], false)
 -- Config for: wilder.nvim
 time([[Config for wilder.nvim]], true)
-try_loadstring("\27LJ\2\nﬂ\2\0\0\f\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\0019\1\6\0'\3\a\0009\4\b\0005\6\r\0009\a\t\0005\t\v\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\14\0069\a\15\0005\t\16\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\17\6B\4\2\0A\1\1\1K\0\1\0\6/\1\0\1\16highlighter\0\22wildmenu_renderer\6:\1\0\2\6:\0\6/\0\16highlighter\1\0\1\16highlighter\0\22basic_highlighter\23popupmenu_renderer\17renderer_mux\rrenderer\15set_option\nmodes\1\0\3\nmodes\0\17previous_key\f<S-Tab>\rnext_key\n<Tab>\1\4\0\0\6:\6/\6?\nsetup\vwilder\frequire\0", "config", "wilder.nvim")
+try_loadstring("\27LJ\2\nﬂ\2\0\0\f\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\0019\1\6\0'\3\a\0009\4\b\0005\6\r\0009\a\t\0005\t\v\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\14\0069\a\15\0005\t\16\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\17\6B\4\2\0A\1\1\1K\0\1\0\6/\1\0\1\16highlighter\0\22wildmenu_renderer\6:\1\0\2\6:\0\6/\0\16highlighter\1\0\1\16highlighter\0\22basic_highlighter\23popupmenu_renderer\17renderer_mux\rrenderer\15set_option\nmodes\1\0\3\rnext_key\n<Tab>\nmodes\0\17previous_key\f<S-Tab>\1\4\0\0\6:\6/\6?\nsetup\vwilder\frequire\0", "config", "wilder.nvim")
 time([[Config for wilder.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'MarkdownPreview', function(cmdargs)
-          require('packer.load')({'markdown-preview.nvim'}, { cmd = 'MarkdownPreview', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'markdown-preview.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('MarkdownPreview ', 'cmdline')
-      end})
-time([[Defining lazy-load commands]], false)
-
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

@@ -2,7 +2,7 @@ local servers = {
 	"lua_ls",
 	"pyright",
 	"jsonls",
-  "tsserver",
+  -- "tsserver", turned off because its slow on big projects
   "gopls",
   "html",
   "marksman",
@@ -14,7 +14,8 @@ local servers = {
   "eslint",
   "rust_analyzer",
   "sqlls",
-  "prismals"
+  "prismals",
+  "denols"
 }
 
 local settings = {

@@ -28,6 +28,10 @@ module.setup {
   auto_install = true,
   autotag = {
     enable = true
+  },
+  sync_install = false,
+  highlight = {
+    enable = true,
   }
 }
 
