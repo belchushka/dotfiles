@@ -152,7 +152,7 @@ return packer.startup(function(use)
   use 'neovim/nvim-lspconfig'
   use "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use "nvimtools/none-ls.nvim"
   use {
   "pmizio/typescript-tools.nvim",
   requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -174,9 +174,6 @@ return packer.startup(function(use)
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate"
-  }
-  use {
-    "nvim-treesitter/nvim-treesitter-context",
   }
 
   -- Autopairs

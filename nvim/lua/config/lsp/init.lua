@@ -6,9 +6,5 @@ end
 
 require "config.lsp.mason"
 require("config.lsp.handlers").setup()
-require("config.lsp.null-ls")
+require("config.lsp.none-ls")
 require("config.lsp.ts-tools")
-
-
-
-

@@ -15,7 +15,8 @@ local servers = {
   "rust_analyzer",
   "sqlls",
   "prismals",
-  "denols"
+  "denols",
+  -- "mypy",
 }
 
 local settings = {
@@ -60,4 +61,3 @@ for _, server in pairs(servers) do
 
 	lspconfig[server].setup(opts)
 end
-

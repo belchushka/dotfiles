@@ -62,10 +62,10 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- Debugger
 keymap("n", "<C-b>", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 
-
 -- Telescope
 keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
+keymap("n", "<leader>fr", "<cmd>lua require('telescope.builtin').resume()<cr>", opts)
 
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -86,7 +86,7 @@ keymap("n", "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<cr
 keymap("n", "gx", "<cmd>Browse<cr>", opts)
 keymap("v", "gx", "<cmd>Browse<cr>", opts)
 
--- Copilot 
+-- Copilot
 vim.keymap.set('i', '<C-c>', 'copilot#Accept("\\<CR>")', {
   expr = true,
   replace_keycodes = false

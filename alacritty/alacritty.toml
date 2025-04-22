@@ -13,7 +13,7 @@ decorations = "Buttonless"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font" }
-size = 19
+size = 18
 offset = {x = 0, y = 1}
 
 [[keyboard.bindings]]
