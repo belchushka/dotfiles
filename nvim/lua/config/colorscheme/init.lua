@@ -1,7 +1,7 @@
 require 'config.colorscheme.cyberdream'
 require 'config.colorscheme.kanagawa'
 
-local dark_theme = "rose-pine"
+local dark_theme = "nightfly"
 local light_theme = "kanagawa-lotus"
 
 local theme = vim.utils.get_sys_theme()

@@ -93,6 +93,11 @@ module.setup {
     media_files = {
       filetypes = { "png", "webp", "jpg", "jpeg" },
       find_cmd = "rg"
+    },
+    ["ui-select"] = {
+      require("telescope.themes").get_ivy {}
     }
   },
 }
+
+module.load_extension('ui-select')

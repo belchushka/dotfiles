@@ -39,14 +39,45 @@ packer.init {
   },
 }
 
+vim.cmd [[packadd packer.nvim]]
+
 -- Install your plugins here
 return packer.startup(function(use)
 
   -- Python
   use {"petobens/poet-v"}
 
+  -- Avante
+  use {
+    "yetone/avante.nvim",
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+      'stevearc/dressing.nvim',
+      'nvim-lua/plenary.nvim',
+      'MunifTanjim/nui.nvim',
+      'MeanderingProgrammer/render-markdown.nvim',
+      'hrsh7th/nvim-cmp',
+      'nvim-tree/nvim-web-devicons',
+      'HakonHarnes/img-clip.nvim',
+      'zbirenbaum/copilot.lua'
+    },
+    branch = 'main',
+    run = 'make',
+  }
+
   --Copilot
-  use {"github/copilot.vim"}
+  use { "zbirenbaum/copilot.lua" }
+  use {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    requires = {
+      "github/copilot.vim",
+      "nvim-lua/plenary.nvim",
+    },
+    run = "make tiktoken",
+    config = function()
+      require("CopilotChat").setup {}
+    end
+  }
 
   --Config
   use { "folke/neodev.nvim", opts = {} }
@@ -111,6 +142,8 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
+  use "sphamba/smear-cursor.nvim"
+
 
   use {
     'gelguy/wilder.nvim',
@@ -169,6 +202,8 @@ return packer.startup(function(use)
     "nvim-telescope/telescope-file-browser.nvim",
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
+  use {'nvim-telescope/telescope-ui-select.nvim' }
+
 
   -- Treesitter
   use {

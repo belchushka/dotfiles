@@ -4,21 +4,36 @@ if not null_ls_status_ok then
 end
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+local paths = require("config.lsp.paths")
 
 null_ls.setup({
-  debug = false,
   sources = {
-    -- diagnostics.pylint.with({
-    --   diagnostics_postprocess = function(diagnostic)
-    --     diagnostic.code = diagnostic.message_id
-    --   end,
-    -- }),
     diagnostics.mypy.with({
-      command = vim.fn.stdpath("data") .. "/mason/bin/mypy",
-      extra_args = { "--strict" },
+      command = paths.find_executable("mypy", 'venv'),
+      extra_args = function()
+        local args = { "--show-error-codes" }
+        if vim.fn.filereadable("pyproject.toml") == 1 then
+          table.insert(args, "--config-file")
+          table.insert(args, "pyproject.toml")
+        end
+        return args
+      end,
     }),
-    formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
-    formatting.black,
-    formatting.isort,
+
+    formatting.black.with({
+      command = paths.find_executable("black", 'venv'),
+      extra_args = { "--fast" },
+    }),
+
+    formatting.isort.with({
+      command = paths.find_executable("isort", 'venv'),
+      extra_args = { "--profile", "black" },
+    }),
+
+    formatting.prettier.with({
+      command = paths.find_executable("prettier", 'node_modules'),
+      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote"
+      }
+    }),
   },
 })

@@ -92,3 +92,7 @@ vim.keymap.set('i', '<C-c>', 'copilot#Accept("\\<CR>")', {
   replace_keycodes = false
 })
 vim.g.copilot_no_tab_map = true
+
+keymap("n", "<C-c>", ":AvanteToggle<CR>", opts)
+-- keymap("v", "<C-k>", "<cmd>lua require('avante.api').edit()<cr>", opts)
+
