@@ -86,13 +86,6 @@ keymap("n", "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<cr
 keymap("n", "gx", "<cmd>Browse<cr>", opts)
 keymap("v", "gx", "<cmd>Browse<cr>", opts)
 
--- Copilot
-vim.keymap.set('i', '<C-c>', 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false
-})
-vim.g.copilot_no_tab_map = true
-
 keymap("n", "<C-c>", ":AvanteToggle<CR>", opts)
 -- keymap("v", "<C-k>", "<cmd>lua require('avante.api').edit()<cr>", opts)
 

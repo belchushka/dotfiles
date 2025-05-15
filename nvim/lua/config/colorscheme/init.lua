@@ -1,6 +1,8 @@
 require 'config.colorscheme.cyberdream'
 require 'config.colorscheme.kanagawa'
 
+local colors = require 'config.colorscheme.colors'
+
 local dark_theme = "nightfly"
 local light_theme = "kanagawa-lotus"
 
@@ -13,3 +15,5 @@ if theme == "light" then
 end
 
 vim.cmd("colorscheme "..current_scheme)
+
+colors.setup()

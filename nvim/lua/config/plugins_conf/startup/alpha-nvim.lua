@@ -1,121 +1,48 @@
 local alpha = require'alpha'
+local local_ascii = require'config.plugins_conf.startup.ascii'
 
-local coolLines = {
-  [[    ███╗   ███╗ █████╗ ██╗  ██╗███████╗   ]],
-  [[    ████╗ ████║██╔══██╗██║ ██╔╝██╔════╝   ]],
-  [[    ██╔████╔██║███████║█████╔╝ █████╗     ]],
-  [[    ██║╚██╔╝██║██╔══██║██╔═██╗ ██╔══╝     ]],
-  [[    ██║ ╚═╝ ██║██║  ██║██║  ██╗███████╗   ]],
-  [[    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝   ]],
-  [[      ██████╗ ██████╗  ██████╗ ██╗        ]],
-  [[     ██╔════╝██╔═══██╗██╔═══██╗██║        ]],
-  [[     ██║     ██║   ██║██║   ██║██║        ]],
-  [[     ██║     ██║   ██║██║   ██║██║        ]],
-  [[     ╚██████╗╚██████╔╝╚██████╔╝███████╗   ]],
-  [[      ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝   ]],
-  [[███████╗████████╗██╗   ██╗███████╗███████╗]],
-  [[██╔════╝╚══██╔══╝██║   ██║██╔════╝██╔════╝]],
-  [[███████╗   ██║   ██║   ██║█████╗  █████╗  ]],
-  [[╚════██║   ██║   ██║   ██║██╔══╝  ██╔══╝  ]],
-  [[███████║   ██║   ╚██████╔╝██║     ██║     ]],
-  [[╚══════╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝     ]],
-}
+local is_ok, ascii = pcall(require, "ascii")
 
-local solveLines = {
-  [[╔═╗┬┬─┐┌─┐┌┬┐  ┌─┐┌─┐┬ ┬  ┬┌─┐  ┌┬┐┬ ┬┌─┐  ┌─┐┬─┐┌─┐┌┐ ┬  ┌─┐┌┬┐   ]],
-  [[╠╣ │├┬┘└─┐ │   └─┐│ ││ └┐┌┘├┤    │ ├─┤├┤   ├─┘├┬┘│ │├┴┐│  ├┤ │││   ]],
-  [[╚  ┴┴└─└─┘ ┴┘  └─┘└─┘┴─┘└┘ └─┘   ┴ ┴ ┴└─┘  ┴  ┴└─└─┘└─┘┴─┘└─┘┴ ┴ o ]],
-  [[      ╔╦╗┬ ┬┌─┐┌┐┌  ┬ ┬┬─┐┬┌┬┐┌─┐  ┌┬┐┬ ┬┌─┐  ┌─┐┌─┐┌┬┐┌─┐         ]],
-  [[       ║ ├─┤├┤ │││  │││├┬┘│ │ ├┤    │ ├─┤├┤   │  │ │ ││├┤          ]],
-  [[       ╩ ┴ ┴└─┘┘└┘  └┴┘┴└─┴ ┴ └─┘   ┴ ┴ ┴└─┘  └─┘└─┘─┴┘└─┘         ]],
-  [[                                                     - John Johnson]]
-}
-
-local humourLines = {
-  [[╔═╗┌─┐┌┬┐┌─┐  ┬┌─┐  ┬  ┬┬┌─┌─┐  ┬ ┬┬ ┬┌┬┐┌─┐┬─┐                           ]],
-  [[║  │ │ ││├┤   │└─┐  │  │├┴┐├┤   ├─┤│ │││││ │├┬┘                           ]],
-  [[╚═╝└─┘─┴┘└─┘  ┴└─┘  ┴─┘┴┴ ┴└─┘  ┴ ┴└─┘┴ ┴└─┘┴└─o                          ]],
-  [[╦ ╦┬ ┬┌─┐┌┐┌  ┬ ┬┌─┐┬ ┬  ┬ ┬┌─┐┬  ┬┌─┐  ┌┬┐┌─┐  ┌─┐─┐ ┬┌─┐┬  ┌─┐┬┌┐┌  ┬┌┬┐]],
-  [[║║║├─┤├┤ │││  └┬┘│ ││ │  ├─┤├─┤└┐┌┘├┤    │ │ │  ├┤ ┌┴┬┘├─┘│  ├─┤││││  │ │ ]],
-  [[╚╩╝┴ ┴└─┘┘└┘   ┴ └─┘└─┘  ┴ ┴┴ ┴ └┘ └─┘   ┴ └─┘  └─┘┴ └─┴  ┴─┘┴ ┴┴┘└┘  ┴ ┴┘]],
-  [[                                                        ┬┌┬┐┌─┐  ┌┐ ┌─┐┌┬┐]],
-  [[                                                        │ │ └─┐  ├┴┐├─┤ ││]],
-  [[                                                        ┴ ┴ └─┘  └─┘┴ ┴─┴┘]],
-  [[                                                              - Cory House]],
-}
-
-local bugLines = {
-  [[  _____   _                          _                 _                             ]],
-  [[ |_   _| | |_    ___   _ _   ___    (_)  ___    __ _  | | __ __ __  __ _   _  _   ___]],
-  [[   | |   | ' \  / -_) | '_| / -_)   | | (_-<   / _` | | | \ V  V / / _` | | || | (_-<]],
-  [[   |_|   |_||_| \___| |_|   \___|   |_| /__/   \__,_| |_|  \_/\_/  \__,_|  \_, | /__/]],
-  [[                                                                           |__/      ]],
-  [[                                                   _                                 ]],
-  [[  ___   _ _    ___     _ __    ___   _ _   ___    | |__   _  _   __ _                ]],
-  [[ / _ \ | ' \  / -_)   | '  \  / _ \ | '_| / -_)   | '_ \ | || | / _` |               ]],
-  [[ \___/ |_||_| \___|   |_|_|_| \___/ |_|   \___|   |_.__/  \_,_| \__, |               ]],
-  [[                                                                |___/                ]],
-  [[  _              __   _                                                              ]],
-  [[ | |_   ___     / _| (_) __ __                                                       ]],
-  [[ |  _| / _ \   |  _| | | \ \ /  _                                                    ]],
-  [[  \__| \___/   |_|   |_| /_\_\ (_)                                     - Ellen Ullman]],
-}
-
-local fixLines = {
-  [[    ┌─┐┬─┐ ┬  ┌┬┐┬ ┬┌─┐  ┌─┐┌─┐┬ ┬┌─┐┌─┐      ]],
-  [[    ├┤ │┌┴┬┘   │ ├─┤├┤   │  ├─┤│ │└─┐├┤       ]],
-  [[    └  ┴┴ └─   ┴ ┴ ┴└─┘  └─┘┴ ┴└─┘└─┘└─┘┘     ]],
-  [[╔╗╔╔═╗╔╦╗  ╔╦╗╦ ╦╔═╗  ╔═╗╦ ╦╔╦╗╔═╗╔╦╗╔═╗╔╦╗╔═╗]],
-  [[║║║║ ║ ║    ║ ╠═╣║╣   ╚═╗╚╦╝║║║╠═╝ ║ ║ ║║║║╚═╗]],
-  [[╝╚╝╚═╝ ╩    ╩ ╩ ╩╚═╝  ╚═╝ ╩ ╩ ╩╩   ╩ ╚═╝╩ ╩╚═╝]],
-  [[                              - Steve Maguire ]],
-}
-
-local processLines = {
-  [[╔╦╗╦ ╦╔═╗  ╔═╗╦═╗╔═╗╔═╗╔╦╗╦╦  ╦╔═╗  ╔═╗╦═╗╔═╗╔═╗╔═╗╔═╗╔═╗]],
-  [[ ║ ╠═╣║╣   ║  ╠╦╝║╣ ╠═╣ ║ ║╚╗╔╝║╣   ╠═╝╠╦╝║ ║║  ║╣ ╚═╗╚═╗]],
-  [[ ╩ ╩ ╩╚═╝  ╚═╝╩╚═╚═╝╩ ╩ ╩ ╩ ╚╝ ╚═╝  ╩  ╩╚═╚═╝╚═╝╚═╝╚═╝╚═╝]],
-  [[This is Amazing!]],
-  [[This is difficult]],
-  [[This is shit]],
-  [[I am shit]],
-  [[This might be OK]],
-  [[This is Amazing!]],
-}
+local headers = {}
 
 local function lineColor(lines, popStart, popEnd)
   local out = {}
   for i, line in ipairs(lines) do
-    local hi = "StartLogo" .. i
-    if i > popStart and i <= popEnd then
-      hi = "StartLogoPop" .. i - popStart
+    local hi
+    if i % 2 == 0 and i > popStart and i <= popEnd then
+      hi = "StartLogoPop" .. ((i - popStart) % 5 + 1)
     elseif i > popStart then
-      hi = "StartLogo" .. i - popStart
+      hi = "StartLogo" .. ((i - popStart) % 5 + 1)
     else
-      hi = "StartLogo" .. i
+      hi = "StartLogo" .. (i % 5 + 1)
     end
     table.insert(out, { hi = hi, line = line})
   end
   return out
 end
 
-local headers = {
-  lineColor(coolLines, 6, 12),
-  lineColor(solveLines, 0, 0),
-  lineColor(humourLines, 6, 9),
-  lineColor(bugLines, 5, 10),
-  lineColor(processLines, 0, 3),
-  lineColor(fixLines, 0, 0),
+
+if not is_ok then
+ headers = {
+  lineColor(local_ascii.coolLines, 6, 12),
+  lineColor(local_ascii.solveLines, 0, 0),
+  lineColor(local_ascii.humourLines, 6, 9),
+  lineColor(local_ascii.bugLines, 5, 10),
+  lineColor(local_ascii.processLines, 0, 3),
+  lineColor(local_ascii.fixLines, 0, 0),
 }
+else
+  headers = {
+    lineColor(ascii.art.text.neovim.sharp, 1, 5),
+    lineColor(ascii.art.text.doom.DooM, 3, 5)
+  }
+end
 
 local function header_chars()
   math.randomseed(os.time())
   return headers[math.random(#headers)]
 end
 
--- Map over the headers, setting a different color for each line.
--- This is done by setting the Highligh to StartLogoN, where N is the row index.
--- Define StartLogo1..StartLogoN to get a nice gradient.
 local function header_color()
   local lines = {}
   for _, lineConfig in pairs(header_chars()) do

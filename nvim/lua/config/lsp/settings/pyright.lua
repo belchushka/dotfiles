@@ -6,7 +6,8 @@ local opts = {
         useLibraryCodeForTypes = true
       }
     }
-  }
+  },
+  filetypes = { 'python' },
 }
 
 return opts

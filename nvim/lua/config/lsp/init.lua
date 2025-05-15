@@ -8,4 +8,3 @@ require "config.lsp.mason"
 require("config.lsp.handlers").setup()
 require("config.lsp.none-ls")
 require("config.lsp.ts-tools")
-require("config.lsp.paths")

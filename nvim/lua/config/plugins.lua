@@ -43,9 +43,8 @@ vim.cmd [[packadd packer.nvim]]
 
 -- Install your plugins here
 return packer.startup(function(use)
-
   -- Python
-  use {"petobens/poet-v"}
+  use { "petobens/poet-v" }
 
   -- Avante
   use {
@@ -67,17 +66,6 @@ return packer.startup(function(use)
 
   --Copilot
   use { "zbirenbaum/copilot.lua" }
-  use {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    requires = {
-      "github/copilot.vim",
-      "nvim-lua/plenary.nvim",
-    },
-    run = "make tiktoken",
-    config = function()
-      require("CopilotChat").setup {}
-    end
-  }
 
   --Config
   use { "folke/neodev.nvim", opts = {} }
@@ -92,6 +80,13 @@ return packer.startup(function(use)
     'goolord/alpha-nvim',
     requires = { 'nvim-tree/nvim-web-devicons', 'nvim-lua/plenary.nvim' },
   }
+
+  use({
+    "MaximilianLloyd/ascii.nvim",
+    requires = {
+      "MunifTanjim/nui.nvim"
+    }
+  })
   -- Tree
   use {
     "nvim-neo-tree/neo-tree.nvim",
@@ -124,14 +119,14 @@ return packer.startup(function(use)
   use { "rose-pine/neovim", name = "rose-pine" }
   use { 'Yazeed1s/oh-lucy.nvim' }
   use 'projekt0n/github-nvim-theme'
-  use {'nyoom-engineering/oxocarbon.nvim'}
+  use { 'nyoom-engineering/oxocarbon.nvim' }
 
   -- Git
   use {
-  "FabijanZulj/blame.nvim",
-  config = function()
-    require("blame").setup()
-  end
+    "FabijanZulj/blame.nvim",
+    config = function()
+      require("blame").setup()
+    end
   }
 
   -- Plugins
@@ -183,12 +178,12 @@ return packer.startup(function(use)
 
   -- Lsp
   use 'neovim/nvim-lspconfig'
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
+  use { "williamboman/mason.nvim", tag = "v1.11.0" }
+  use { "williamboman/mason-lspconfig.nvim", tag = "v1.31.0" }
   use "nvimtools/none-ls.nvim"
   use {
-  "pmizio/typescript-tools.nvim",
-  requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    "pmizio/typescript-tools.nvim",
+    requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   }
 
   -- Telescope
@@ -202,7 +197,7 @@ return packer.startup(function(use)
     "nvim-telescope/telescope-file-browser.nvim",
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
-  use {'nvim-telescope/telescope-ui-select.nvim' }
+  use { 'nvim-telescope/telescope-ui-select.nvim' }
 
 
   -- Treesitter
