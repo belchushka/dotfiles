@@ -13,4 +13,10 @@ module.setup({
       accept = "<C-c>",
     },
   },
+  panel = {
+    enabled = false,
+    auto_refresh = true,
+  },
+  copilot_model="claude-3.7-sonnet",
 })
+

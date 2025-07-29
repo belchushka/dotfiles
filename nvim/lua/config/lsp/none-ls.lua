@@ -20,16 +20,6 @@ null_ls.setup({
       end,
     }),
 
-    formatting.black.with({
-      command = paths.find_executable("black", 'venv'),
-      extra_args = { "--fast" },
-    }),
-
-    formatting.isort.with({
-      command = paths.find_executable("isort", 'venv'),
-      extra_args = { "--profile", "black" },
-    }),
-
     formatting.prettier.with({
       command = paths.find_executable("prettier", 'node_modules'),
       extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote"

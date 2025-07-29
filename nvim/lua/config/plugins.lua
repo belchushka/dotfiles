@@ -46,6 +46,13 @@ return packer.startup(function(use)
   -- Python
   use { "petobens/poet-v" }
 
+  -- MCP
+  use {
+    "ravitemer/mcphub.nvim", 
+    requires = { "nvim-lua/plenary.nvim" },
+    build = "npm install -g mcp-hub@latest",
+  }
+
   -- Avante
   use {
     "yetone/avante.nvim",
@@ -66,6 +73,13 @@ return packer.startup(function(use)
 
   --Copilot
   use { "zbirenbaum/copilot.lua" }
+  use {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
+    config = function()
+      -- require("copilot_cmp").setup()
+    end
+  }
 
   --Config
   use { "folke/neodev.nvim", opts = {} }

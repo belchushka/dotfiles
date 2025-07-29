@@ -3,8 +3,8 @@ require 'config.colorscheme.kanagawa'
 
 local colors = require 'config.colorscheme.colors'
 
-local dark_theme = "nightfly"
-local light_theme = "kanagawa-lotus"
+local dark_theme = "nordic"
+local light_theme = "nightfly"
 
 local theme = vim.utils.get_sys_theme()
 

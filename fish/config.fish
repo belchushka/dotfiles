@@ -28,6 +28,8 @@ if status is-login
   set -x PATH /Users/belchushka/.local/bin $PATH
   set -x ALACRITTY_THEME rose-pine
   set -x PYTHONDONTWRITEBYTECODE 1
+  set -x OPENCV_LIB_DIR /opt/homebrew/Cellar/opencv/4.11.0_1/lib
+  set -x OPENCV4NODEJS_DISABLE_AUTOBUILD 1
 
   pyenv init - fish | source
   nvm use 20

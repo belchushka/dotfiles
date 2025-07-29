@@ -10,6 +10,7 @@ ln -s $PWD/alacritty ~/.config/alacritty
 ln -s $PWD/omf ~/.config/omf
 ln -s $PWD/.tmux.conf ~/.tmux.conf
 ln -s $PWD/ghosty ~/Library/Application\ Support/com.mitchellh.ghostty
+ln -s $PWD/vim/.vimrc ~.vimrc
 
 # Todo autoinstall tools
 

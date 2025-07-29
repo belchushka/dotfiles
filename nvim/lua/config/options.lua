@@ -35,6 +35,7 @@ local opts = {
   background = 'dark'
 }
 
+
 local global = {
   loaded_netrw  = 1,
   loaded_netrwPlugin = 1,
