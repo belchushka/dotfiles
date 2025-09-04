@@ -1,30 +1,33 @@
-#! /bin/bash
+#! /usr/bin/env bash
 
-echo "Begining environment setup..."
+set -euo pipefail
 
-echo "Copying configs"
-ln -s $PWD/nvim ~/.config/nvim
-ln -s $PWD/fish ~/.config/fish
-ln -s $PWD/kitty ~/.config/kitty
-ln -s $PWD/alacritty ~/.config/alacritty
-ln -s $PWD/omf ~/.config/omf
-ln -s $PWD/.tmux.conf ~/.tmux.conf
-ln -s $PWD/ghosty ~/Library/Application\ Support/com.mitchellh.ghostty
-ln -s $PWD/vim/.vimrc ~.vimrc
+os_name=$(uname -s)
 
-# Todo autoinstall tools
+pairs=(
+  "$PWD/nvim"           "$HOME/.config/nvim"
+  "$PWD/fish"           "$HOME/.config/fish"
+  "$PWD/kitty"          "$HOME/.config/kitty"
+  "$PWD/alacritty"      "$HOME/.config/alacritty"
+  "$PWD/omf"            "$HOME/.config/omf"
+  "$PWD/.tmux.conf"     "$HOME/.tmux.conf"
+  "$PWD/vim/.vimrc"     "$HOME/.vimrc"
+)
 
-# if test -d ./tmp; then
-# 	rm -rf ./tmp/*
-# else
-# 	mkdir tmp
-# fi
+macos_pairs=(
+  "$PWD/ghosty"         "$HOME/Library/Application Support/com.mitchellh.ghostty"
+)
 
-# if [[ "$OSTYPE" == "darwin"* ]]; then
-#	mkdir ./tmp/osx
-#	osx_path=./tmp/osx
-#	echo $osx_path/nvim.tar.gz
-#	curl -L https://github.com/neovim/neovim/releases/download/nightly/nvim-macos.tar.gz -o $osx_path/nvim.tar.gz
-# 
-#	mkdir $osx_path/nvim
-# fi
+function make_links () {
+  local arr=("$@")
+
+  for ((i=0; i<${#arr[@]}; i+=2)); do
+    ln -s "${arr[i]}" "${arr[i+1]}"
+  done
+}
+
+make_links "${pairs[@]}"
+
+if [[ "$os_name" == "Darwin" ]]; then
+  make_links "${macos_pairs[@]}"
+fi

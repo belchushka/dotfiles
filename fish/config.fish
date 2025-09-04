@@ -26,9 +26,10 @@ if status is-login
   set -x PATH /opt/nvim/bin $PATH
   set -x PATH $GEM_HOME/bin $PATH
   set -x PATH /Users/belchushka/.local/bin $PATH
+  set -x PATH /usr/local/go/bin $PATH
   set -x ALACRITTY_THEME rose-pine
   set -x PYTHONDONTWRITEBYTECODE 1
-  set -x OPENCV_LIB_DIR /opt/homebrew/Cellar/opencv/4.11.0_1/lib
+  set -x OPENCV_LIB_DIR /opt/homebrew/Cellar/opencv/4.12.0/lib
   set -x OPENCV4NODEJS_DISABLE_AUTOBUILD 1
 
   pyenv init - fish | source

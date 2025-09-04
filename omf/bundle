@@ -1,8 +1,11 @@
 package bass
 package https://github.com/edc/bass
+theme agnoster
 theme ays
 theme batman
 theme bobthefish
 theme budspencer
 theme default
+theme harleen
+theme lavender
 theme ocean

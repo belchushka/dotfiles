@@ -43,9 +43,6 @@ vim.cmd [[packadd packer.nvim]]
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- Python
-  use { "petobens/poet-v" }
-
   -- MCP
   use {
     "ravitemer/mcphub.nvim", 
@@ -65,7 +62,6 @@ return packer.startup(function(use)
       'hrsh7th/nvim-cmp',
       'nvim-tree/nvim-web-devicons',
       'HakonHarnes/img-clip.nvim',
-      'zbirenbaum/copilot.lua'
     },
     branch = 'main',
     run = 'make',
