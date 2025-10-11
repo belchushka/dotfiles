@@ -18,7 +18,7 @@ macos_pairs=(
   "$PWD/ghosty"         "$HOME/.config/ghostty"
 )
 
-packages=('ripgrep' 'nvim' 'fish' 'htop' 'alacritty')
+packages=('ripgrep' 'nvim' 'fish' 'htop' 'alacritty' 'tmux')
 
 function install_packages_macos() {
   local packages=("$@")
