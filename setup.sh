@@ -15,13 +15,38 @@ pairs=(
 )
 
 macos_pairs=(
-  "$PWD/ghosty"         "$HOME/Library/Application Support/com.mitchellh.ghostty"
+  "$PWD/ghosty"         "$HOME/.config/ghostty"
 )
+
+packages=('ripgrep' 'nvim' 'fish' 'htop' 'alacritty')
+
+function install_packages_macos() {
+  local packages=("$@")
+
+  if ! brew -h > /dev/null 2>&1; then
+    echo "Brew is not installed. Installing..."
+    (/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)")
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
+
+  echo "Installing packages for macos using brew..."
+  brew install "${packages[@]}"
+
+  echo "Setting default shell"
+  local fish_path=$(which fish)
+  echo "${fish_path}" | sudo tee -a /etc/shells
+  sudo chsh -s "${fish_path}"
+}
 
 function make_links () {
   local arr=("$@")
 
   for ((i=0; i<${#arr[@]}; i+=2)); do
+    if [[-e "${arr[i+1]}"]]; then
+      continue
+    fi
+
+
     ln -s "${arr[i]}" "${arr[i+1]}"
   done
 }
@@ -30,4 +55,5 @@ make_links "${pairs[@]}"
 
 if [[ "$os_name" == "Darwin" ]]; then
   make_links "${macos_pairs[@]}"
+  install_packages_macos "${packages[@]}"
 fi

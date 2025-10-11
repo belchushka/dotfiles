@@ -43,40 +43,6 @@ vim.cmd [[packadd packer.nvim]]
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- MCP
-  use {
-    "ravitemer/mcphub.nvim", 
-    requires = { "nvim-lua/plenary.nvim" },
-    build = "npm install -g mcp-hub@latest",
-  }
-
-  -- Avante
-  use {
-    "yetone/avante.nvim",
-    requires = {
-      'nvim-treesitter/nvim-treesitter',
-      'stevearc/dressing.nvim',
-      'nvim-lua/plenary.nvim',
-      'MunifTanjim/nui.nvim',
-      'MeanderingProgrammer/render-markdown.nvim',
-      'hrsh7th/nvim-cmp',
-      'nvim-tree/nvim-web-devicons',
-      'HakonHarnes/img-clip.nvim',
-    },
-    branch = 'main',
-    run = 'make',
-  }
-
-  --Copilot
-  use { "zbirenbaum/copilot.lua" }
-  use {
-    "zbirenbaum/copilot-cmp",
-    after = { "copilot.lua" },
-    config = function()
-      -- require("copilot_cmp").setup()
-    end
-  }
-
   --Config
   use { "folke/neodev.nvim", opts = {} }
 
@@ -98,16 +64,6 @@ return packer.startup(function(use)
     }
   })
   -- Tree
-  use {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
-  }
   use "nvim-tree/nvim-tree.lua"
 
   -- Themes
@@ -138,6 +94,7 @@ return packer.startup(function(use)
       require("blame").setup()
     end
   }
+  use 'kdheepak/lazygit.nvim'
 
   -- Plugins
   use {
@@ -147,27 +104,10 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
-  use "sphamba/smear-cursor.nvim"
 
 
   use {
     'gelguy/wilder.nvim',
-    config = function()
-      local wilder = require('wilder')
-      wilder.setup({
-        modes = { ':', '/', '?' },
-        next_key = '<Tab>',
-        previous_key = '<S-Tab>'
-      })
-      wilder.set_option('renderer', wilder.renderer_mux({
-        [':'] = wilder.popupmenu_renderer({
-          highlighter = wilder.basic_highlighter(),
-        }),
-        ['/'] = wilder.wildmenu_renderer({
-          highlighter = wilder.basic_highlighter(),
-        }),
-      }))
-    end
   }
   use 'chrishrb/gx.nvim'
 
@@ -177,7 +117,6 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
   use "saadparwaiz1/cmp_luasnip"
-  use "David-Kunz/cmp-npm"
   use 'hrsh7th/cmp-nvim-lsp'
 
   -- Snippets
@@ -191,10 +130,7 @@ return packer.startup(function(use)
   use { "williamboman/mason.nvim", tag = "v1.11.0" }
   use { "williamboman/mason-lspconfig.nvim", tag = "v1.31.0" }
   use "nvimtools/none-ls.nvim"
-  use {
-    "pmizio/typescript-tools.nvim",
-    requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-  }
+  use 'simrat39/symbols-outline.nvim'
 
   -- Telescope
   use {
@@ -208,6 +144,8 @@ return packer.startup(function(use)
     requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   }
   use { 'nvim-telescope/telescope-ui-select.nvim' }
+
+  use {'ThePrimeagen/harpoon'}
 
 
   -- Treesitter
@@ -237,11 +175,6 @@ return packer.startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-
-  use {
-    'prettier/vim-prettier',
-    run = 'yarn install --frozen-lockfile --production',
   }
 
   use 'mfussenegger/nvim-dap'

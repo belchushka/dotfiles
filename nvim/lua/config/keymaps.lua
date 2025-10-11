@@ -54,8 +54,6 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal
 -- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
@@ -86,6 +84,12 @@ keymap("n", "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<cr
 keymap("n", "gx", "<cmd>Browse<cr>", opts)
 keymap("v", "gx", "<cmd>Browse<cr>", opts)
 
-keymap("n", "<C-c>", ":AvanteToggle<CR>", opts)
+keymap("n", "<leader>c", ":Code<CR>", opts)
 -- keymap("v", "<C-k>", "<cmd>lua require('avante.api').edit()<cr>", opts)
 
+-- Harpoon
+keymap("n", "<leader>h", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
+keymap("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
+
+-- Symbol Outline
+keymap("n", "<leader>ds", ":SymbolsOutline<cr>", opts)

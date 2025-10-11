@@ -100,11 +100,6 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/ascii.nvim",
     url = "https://github.com/MaximilianLloyd/ascii.nvim"
   },
-  ["avante.nvim"] = {
-    loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/avante.nvim",
-    url = "https://github.com/yetone/avante.nvim"
-  },
   ["ayu-vim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/ayu-vim",
@@ -136,11 +131,6 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
-  ["cmp-npm"] = {
-    loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/cmp-npm",
-    url = "https://github.com/David-Kunz/cmp-npm"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -156,28 +146,10 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["copilot-cmp"] = {
-    config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
-    load_after = {},
-    loaded = true,
-    needs_bufread = false,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/opt/copilot-cmp",
-    url = "https://github.com/zbirenbaum/copilot-cmp"
-  },
-  ["copilot.lua"] = {
-    loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/copilot.lua",
-    url = "https://github.com/zbirenbaum/copilot.lua"
-  },
   ["cyberdream.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/cyberdream.nvim",
     url = "https://github.com/scottmckendry/cyberdream.nvim"
-  },
-  ["dressing.nvim"] = {
-    loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/dressing.nvim",
-    url = "https://github.com/stevearc/dressing.nvim"
   },
   ["emmet-vim"] = {
     loaded = true,
@@ -204,15 +176,20 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/gx.nvim",
     url = "https://github.com/chrishrb/gx.nvim"
   },
-  ["img-clip.nvim"] = {
+  harpoon = {
     loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/img-clip.nvim",
-    url = "https://github.com/HakonHarnes/img-clip.nvim"
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["kanagawa.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
+  },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -234,20 +211,10 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["mcphub.nvim"] = {
-    loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/mcphub.nvim",
-    url = "https://github.com/ravitemer/mcphub.nvim"
-  },
   ["modes.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/modes.nvim",
     url = "https://github.com/mvllow/modes.nvim"
-  },
-  ["neo-tree.nvim"] = {
-    loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
-    url = "https://github.com/nvim-neo-tree/neo-tree.nvim"
   },
   ["neodev.nvim"] = {
     loaded = true,
@@ -349,20 +316,15 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
-  ["render-markdown.nvim"] = {
-    loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/render-markdown.nvim",
-    url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
-  },
-  ["smear-cursor.nvim"] = {
-    loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/smear-cursor.nvim",
-    url = "https://github.com/sphamba/smear-cursor.nvim"
-  },
   ["startup.nvim"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/startup.nvim",
     url = "https://github.com/startup-nvim/startup.nvim"
+  },
+  ["symbols-outline.nvim"] = {
+    loaded = true,
+    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
+    url = "https://github.com/simrat39/symbols-outline.nvim"
   },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
@@ -404,11 +366,6 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/twilight.nvim",
     url = "https://github.com/folke/twilight.nvim"
   },
-  ["typescript-tools.nvim"] = {
-    loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/typescript-tools.nvim",
-    url = "https://github.com/pmizio/typescript-tools.nvim"
-  },
   ["vim-bbye"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/vim-bbye",
@@ -419,18 +376,12 @@ _G.packer_plugins = {
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/vim-nightfly-colors",
     url = "https://github.com/bluz71/vim-nightfly-colors"
   },
-  ["vim-prettier"] = {
-    loaded = true,
-    path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/vim-prettier",
-    url = "https://github.com/prettier/vim-prettier"
-  },
   ["vim-react-snippets"] = {
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/vim-react-snippets",
     url = "https://github.com/mlaursen/vim-react-snippets"
   },
   ["wilder.nvim"] = {
-    config = { "\27LJ\2\nﬂ\2\0\0\f\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\0019\1\6\0'\3\a\0009\4\b\0005\6\r\0009\a\t\0005\t\v\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\14\0069\a\15\0005\t\16\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\17\6B\4\2\0A\1\1\1K\0\1\0\6/\1\0\1\16highlighter\0\22wildmenu_renderer\6:\1\0\2\6/\0\6:\0\16highlighter\1\0\1\16highlighter\0\22basic_highlighter\23popupmenu_renderer\17renderer_mux\rrenderer\15set_option\nmodes\1\0\3\nmodes\0\17previous_key\f<S-Tab>\rnext_key\n<Tab>\1\4\0\0\6:\6/\6?\nsetup\vwilder\frequire\0" },
     loaded = true,
     path = "/Users/belchushka/.local/share/nvim/site/pack/packer/start/wilder.nvim",
     url = "https://github.com/gelguy/wilder.nvim"
@@ -443,27 +394,14 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: blame.nvim
-time([[Config for blame.nvim]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nblame\frequire\0", "config", "blame.nvim")
-time([[Config for blame.nvim]], false)
--- Config for: wilder.nvim
-time([[Config for wilder.nvim]], true)
-try_loadstring("\27LJ\2\nﬂ\2\0\0\f\0\18\0\0296\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\4\0005\4\3\0=\4\5\3B\1\2\0019\1\6\0'\3\a\0009\4\b\0005\6\r\0009\a\t\0005\t\v\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\14\0069\a\15\0005\t\16\0009\n\n\0B\n\1\2=\n\f\tB\a\2\2=\a\17\6B\4\2\0A\1\1\1K\0\1\0\6/\1\0\1\16highlighter\0\22wildmenu_renderer\6:\1\0\2\6/\0\6:\0\16highlighter\1\0\1\16highlighter\0\22basic_highlighter\23popupmenu_renderer\17renderer_mux\rrenderer\15set_option\nmodes\1\0\3\nmodes\0\17previous_key\f<S-Tab>\rnext_key\n<Tab>\1\4\0\0\6:\6/\6?\nsetup\vwilder\frequire\0", "config", "wilder.nvim")
-time([[Config for wilder.nvim]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
--- Load plugins in order defined by `after`
-time([[Sequenced loading]], true)
-vim.cmd [[ packadd copilot.lua ]]
-vim.cmd [[ packadd copilot-cmp ]]
-
--- Config for: copilot-cmp
-try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "copilot-cmp")
-
-time([[Sequenced loading]], false)
+-- Config for: blame.nvim
+time([[Config for blame.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nblame\frequire\0", "config", "blame.nvim")
+time([[Config for blame.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
