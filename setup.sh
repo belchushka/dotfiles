@@ -18,7 +18,7 @@ macos_pairs=(
   "$PWD/ghosty"         "$HOME/.config/ghostty"
 )
 
-packages=('ripgrep' 'nvim' 'fish' 'htop' 'alacritty' 'tmux')
+packages=('ripgrep' 'nvim' 'fish' 'htop' 'alacritty' 'tmux' 'pfetch')
 
 function install_packages_macos() {
   local packages=("$@")
@@ -42,7 +42,7 @@ function make_links () {
   local arr=("$@")
 
   for ((i=0; i<${#arr[@]}; i+=2)); do
-    if [[-e "${arr[i+1]}"]]; then
+    if [[ -e "${arr[i+1]}" ]]; then
       continue
     fi
 
