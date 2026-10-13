@@ -6,32 +6,42 @@ function nvm
   bass source /opt/homebrew/opt/nvm/nvm.sh --no-use ';' nvm $argv
 end
 
+set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx XDG_DATA_HOME $HOME/.local/share
+set -gx TMUX_CONFIG_DIR $XDG_CONFIG_HOME/tmux
+set -gx TMUX_PLUGIN_MANAGER_PATH $TMUX_CONFIG_DIR/plugins/
+set -gx TMUX_POWERLINE_CONFIG_FILE $TMUX_CONFIG_DIR/powerline/config.sh
 
-if status is-login
-  set -x PATH /opt/homebrew/bin $PATH;
+set -gx ANDROID $HOME/Library/Android
+set -gx ANDROID_HOME $ANDROID/sdk
+set -gx GEM_HOME ~/.gems
 
-  set -x ANDROID $HOME/Library/Android;
-  set -x ANDROID_HOME $ANDROID/sdk;
-  set -x GEM_HOME ~/.gems;
-  set -x PATH $HOME/.cargo/bin $PATH
-  set -x PATH /Applications/Postgres.app/Contents/Versions/latest/bin $PATH;
-  set -x PATH $ANDROID_HOME/tools $PATH;
-  set -x PATH /opt/flutter/bin $PATH;
-  set -x PATH $ANDROID_HOME/tools/bin $PATH;
-  set -x PATH $ANDROID_HOME/platform-tools $PATH;
-  set -x PATH $ANDROID_HOME/emulator $PATH;
-  set -x PATH $HOME/.cargo/env $PATH
-  set -x PATH /Users/belchushka/.gem/ruby/2.6.0/bin $PATH
-  set -x PATH /opt/bin $PATH
-  set -x PATH /opt/nvim/bin $PATH
-  set -x PATH $GEM_HOME/bin $PATH
-  set -x PATH /Users/belchushka/.local/bin $PATH
-  set -x PATH /usr/local/go/bin $PATH
-  set -x ALACRITTY_THEME rose-pine
-  set -x PYTHONDONTWRITEBYTECODE 1
-  set -x OPENCV_LIB_DIR /opt/homebrew/Cellar/opencv/4.12.0/lib
-  set -x OPENCV4NODEJS_DISABLE_AUTOBUILD 1
+set -gx ENABLE_LSP_TOOLS 1
+set -gx ALACRITTY_THEME rose-pine
+set -gx PYTHONDONTWRITEBYTECODE 1
+set -gx OPENCV_LIB_DIR /opt/homebrew/Cellar/opencv/4.12.0/lib
+set -gx OPENCV4NODEJS_DISABLE_AUTOBUILD 1
 
+fish_add_path --path \
+  /usr/local/go/bin \
+  $HOME/.local/bin \
+  $HOME/.local/share/nvim/mason/bin \
+  $GEM_HOME/bin \
+  /opt/nvim/bin \
+  /opt/bin \
+  $HOME/.gem/ruby/2.6.0/bin \
+  $ANDROID_HOME/emulator \
+  $ANDROID_HOME/cmdline-tools/latest/bin \
+  $ANDROID_HOME/platform-tools \
+  $ANDROID_HOME/tools/bin \
+  /opt/flutter/bin \
+  $ANDROID_HOME/tools \
+  /Applications/Postgres.app/Contents/Versions/latest/bin \
+  $HOME/.cargo/bin \
+  /opt/homebrew/bin \
+  $HOME/.antigravity/antigravity/bin
+
+if status is-interactive
   pyenv init - fish | source
   nvm use 20
 end

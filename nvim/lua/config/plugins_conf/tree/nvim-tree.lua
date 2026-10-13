@@ -9,6 +9,9 @@ module.setup({
   filters = {
     dotfiles = false
   },
+  view = {
+    width = 50,
+  },
   git = {
     enable = true,
     ignore = false,

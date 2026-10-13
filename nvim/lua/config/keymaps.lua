@@ -1,95 +1,188 @@
+local map = vim.keymap.set
+
 local opts = { noremap = true, silent = true }
+local silent = { silent = true }
 
-local term_opts = { silent = true }
-
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+map({ "n", "v" }, "<Space>", "<Nop>", opts)
 
--- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+--------------------------------------------------
+-- Normal
+--------------------------------------------------
 
--- keymap("n", "<leader>e", ":Neotree toggle<cr>", opts)
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- Window navigation
+map("n", "<C-h>", "<C-w>h", opts)
+map("n", "<C-j>", "<C-w>j", opts)
+map("n", "<C-k>", "<C-w>k", opts)
+map("n", "<C-l>", "<C-w>l", opts)
 
--- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "<C-h>", "<Left>", opts)
-keymap("i", "<C-l>", "<Right>", opts)
-keymap("i", "<C-j>", "<Down>", opts)
-keymap("i", "<C-k>", "<Up>", opts)
--- Visual --
+-- Explorer
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
+
+-- Buffers
+map("n", "<S-l>", "<cmd>bnext<CR>", opts)
+map("n", "<S-h>", "<cmd>bprevious<CR>", opts)
+map("n", "<S-c>", "<cmd>BufferLinePickClose<CR>", opts)
+
+--------------------------------------------------
+-- Insert
+--------------------------------------------------
+
+map("i", "jk", "<ESC>", opts)
+
+map("i", "<C-h>", "<Left>", opts)
+map("i", "<C-l>", "<Right>", opts)
+map("i", "<C-j>", "<Down>", opts)
+map("i", "<C-k>", "<Up>", opts)
+
+--------------------------------------------------
+-- Visual
+--------------------------------------------------
+
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+map("v", "<", "<gv", opts)
+map("v", ">", ">gv", opts)
 
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+-- Move selection
+map("v", "<A-j>", ":m .+1<CR>==", opts)
+map("v", "<A-k>", ":m .-2<CR>==", opts)
 
--- Visual Block --
--- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+-- Better paste
+map("v", "p", '"_dP', opts)
 
+--------------------------------------------------
+-- Visual Block
+--------------------------------------------------
+
+map("x", "J", ":move '>+1<CR>gv-gv", opts)
+map("x", "K", ":move '<-2<CR>gv-gv", opts)
+
+map("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
+map("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+--------------------------------------------------
 -- Terminal
--- Better terminal navigation
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+--------------------------------------------------
 
+map("t", "<C-k>", "<C-\\><C-N><C-w>k", silent)
+map("t", "<C-l>", "<C-\\><C-N><C-w>l", silent)
+
+--------------------------------------------------
 -- Debugger
-keymap("n", "<C-b>", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+--------------------------------------------------
 
+map("n", "<C-b>", function()
+  require("dap").toggle_breakpoint()
+end, opts)
+
+--------------------------------------------------
 -- Telescope
-keymap("n", "<leader>f", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
-keymap("n", "<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
-keymap("n", "<leader>fr", "<cmd>lua require('telescope.builtin').resume()<cr>", opts)
+--------------------------------------------------
 
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<S-c>", ":BufferLinePickClose<CR>", opts)
+local telescope = require("telescope.builtin")
 
--- Copy
-keymap("n", "<leader>y", '"+y', opts)
-keymap("v", "<leader>y", '"+y', opts)
-keymap("n", "<leader>Y", '"+Y', opts)
+map("n", "<leader>f", telescope.find_files, opts)
+map("n", "<leader>fw", telescope.live_grep, opts)
+map("n", "<leader>fr", telescope.resume, opts)
+
+--------------------------------------------------
+-- Clipboard
+--------------------------------------------------
+
+map({ "n", "v" }, "<leader>y", '"+y', opts)
+map("n", "<leader>Y", '"+Y', opts)
+
+--------------------------------------------------
+-- LSP
+--------------------------------------------------
 
 -- Format
-keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.format({ timeout_ms = 2000 })<cr>", opts)
+map("n", "<leader>p", function()
+  vim.lsp.buf.format({
+    timeout_ms = 2000,
+  })
+end, opts)
 
--- Code Actions
-keymap("n", "<leader>ca", "<cmd>lua require('actions-preview').code_actions()<cr>", opts)
+-- Code actions
+map("n", "<leader>ca", function()
+  require("actions-preview").code_actions()
+end, opts)
 
--- Url open
-keymap("n", "gx", "<cmd>Browse<cr>", opts)
-keymap("v", "gx", "<cmd>Browse<cr>", opts)
+map("n", "<leader>cf", function()
+  vim.lsp.buf.code_action({
+    context = {
+      only = { "source.fixAll" },
+      diagnostics = {},
+    },
+    apply = true,
+  })
+end, opts)
 
-keymap("n", "<leader>c", ":Code<CR>", opts)
--- keymap("v", "<C-k>", "<cmd>lua require('avante.api').edit()<cr>", opts)
+--------------------------------------------------
+-- URL open
+--------------------------------------------------
 
+map({ "n", "v" }, "gx", "<cmd>Browse<CR>", opts)
+
+--------------------------------------------------
 -- Harpoon
-keymap("n", "<leader>h", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
-keymap("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", opts)
+--------------------------------------------------
 
--- Symbol Outline
-keymap("n", "<leader>ds", ":SymbolsOutline<cr>", opts)
+map("n", "<leader>h", function()
+  require("harpoon.ui").toggle_quick_menu()
+end, opts)
+
+map("n", "<leader>ha", function()
+  require("harpoon.mark").add_file()
+end, opts)
+
+--------------------------------------------------
+-- Symbols
+--------------------------------------------------
+
+map("n", "<leader>ds", "<cmd>SymbolsOutline<CR>", opts)
+
+--------------------------------------------------
+-- File under cursor
+--------------------------------------------------
+
+map("n", "gf", function()
+  local file = vim.fn.expand("<cfile>")
+
+  if file == "" then
+    return
+  end
+
+  local current_win = vim.api.nvim_get_current_win()
+
+  local wins = vim.api.nvim_tabpage_list_wins(0)
+
+  for _, win in ipairs(wins) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    local buftype = vim.bo[buf].buftype
+
+    if buftype ~= "terminal" then
+      vim.api.nvim_set_current_win(win)
+      vim.cmd("edit " .. vim.fn.fnameescape(file))
+      return
+    end
+  end
+
+  vim.api.nvim_set_current_win(current_win)
+  vim.cmd("edit " .. vim.fn.fnameescape(file))
+end)
+
+map("n", "D", function()
+  local current = vim.api.nvim_get_current_buf()
+
+  vim.cmd("bnext")
+
+  if vim.api.nvim_get_current_buf() == current then
+    vim.cmd("enew")
+  end
+
+  vim.cmd("bdelete " .. current)
+end, { noremap = true, silent = true }
+)

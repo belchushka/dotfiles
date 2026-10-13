@@ -10,7 +10,7 @@ pairs=(
   "$PWD/kitty"          "$HOME/.config/kitty"
   "$PWD/alacritty"      "$HOME/.config/alacritty"
   "$PWD/omf"            "$HOME/.config/omf"
-  "$PWD/.tmux.conf"     "$HOME/.tmux.conf"
+  "$PWD/tmux"           "$HOME/.config/tmux"
   "$PWD/vim/.vimrc"     "$HOME/.vimrc"
 )
 
@@ -18,7 +18,7 @@ macos_pairs=(
   "$PWD/ghosty"         "$HOME/.config/ghostty"
 )
 
-packages=('ripgrep' 'nvim' 'fish' 'htop' 'alacritty' 'tmux' 'pfetch')
+packages=('ripgrep' 'nvim' 'fish' 'htop' 'alacritty' 'tmux' 'pfetch' 'nvm' 'pyenv' 'claude-code' 'devtoys' 'tpack')
 
 function install_packages_macos() {
   local packages=("$@")
@@ -36,6 +36,12 @@ function install_packages_macos() {
   local fish_path=$(which fish)
   echo "${fish_path}" | sudo tee -a /etc/shells
   sudo chsh -s "${fish_path}"
+
+  echo "Installing omf"
+  curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
+  echo "Installing tmux plugins"
+  TMUX_PLUGIN_MANAGER_PATH="$HOME/.config/tmux/plugins/" tpack install
 }
 
 function make_links () {

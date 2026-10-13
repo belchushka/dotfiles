@@ -2,7 +2,7 @@ local servers = {
 	"lua_ls",
 	"pyright",
 	"jsonls",
-  "ts_ls",
+  -- "ts_ls",
   "gopls",
   "html",
   "marksman",
@@ -16,7 +16,8 @@ local servers = {
   "sqlls",
   "prismals",
   "ruff",
-  "emmet_ls"
+  "emmet_ls",
+  "vtsls"
   -- "denols",
   -- "mypy",
 }
@@ -40,21 +41,44 @@ require("mason-lspconfig").setup({
 	automatic_installation = false,
 })
 
-local opts = {}
+local handlers = require("config.lsp.handlers")
 
 for _, server in pairs(servers) do
-	opts = {
-		on_attach = require("config.lsp.handlers").on_attach,
-		capabilities = require("config.lsp.handlers").capabilities,
-	}
+  local opts = {
+    on_attach = handlers.on_attach,
+    capabilities = handlers.capabilities,
+  }
 
-	server = vim.split(server, "@")[1]
+  server = vim.split(server, "@")[1]
 
-  local require_ok, conf_opts = pcall(require, "config.lsp.settings." .. server)
-	if require_ok then
-		opts = vim.tbl_deep_extend("force", conf_opts, opts)
-	end
+  local require_ok, conf_opts =
+    pcall(require, "config.lsp.settings." .. server)
 
-	vim.lsp.config(server, opts)
+  if require_ok then
+    -- merge capabilities
+    opts.capabilities = vim.tbl_deep_extend(
+      "force",
+      opts.capabilities or {},
+      conf_opts.capabilities or {}
+    )
+
+    -- compose on_attach
+    local default_on_attach = opts.on_attach
+    local custom_on_attach = conf_opts.on_attach
+
+    if custom_on_attach then
+      opts.on_attach = function(client, bufnr)
+        default_on_attach(client, bufnr)
+        custom_on_attach(client, bufnr)
+      end
+    end
+
+    conf_opts.on_attach = nil
+    conf_opts.capabilities = nil
+
+    opts = vim.tbl_deep_extend("force", opts, conf_opts)
+  end
+
+  vim.lsp.config(server, opts)
   vim.lsp.enable(server)
 end

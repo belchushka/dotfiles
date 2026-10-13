@@ -19,11 +19,9 @@ null_ls.setup({
         return args
       end,
     }),
-
     formatting.prettier.with({
       command = paths.find_executable("prettier", 'node_modules'),
-      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote"
-      }
+      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote"}
     }),
   },
 })

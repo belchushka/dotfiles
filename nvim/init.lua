@@ -1,6 +1,6 @@
 require "ext" -- IMPORTANT
+require "config.lazy.lazy" -- IMPORTANT
 require "config.options"
-require "config.plugins"
 require "config.lsp"
 require "config.plugins_conf"
 require "config.keymaps"
